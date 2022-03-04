@@ -8,7 +8,11 @@ import java.util.Map;
 public class UserDatabaseUltis {
     private static Map<String, User> USERS = new HashMap<>();
 
-    private void intiData() {
+    static {
+        intiData();
+    }
+
+    private static void intiData() {
         User user1 = new User("admin1", "123456");
         User user2 = new User("admin1", "123456");
         USERS.put(user1.getUsername(), user1);
