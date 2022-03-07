@@ -14,7 +14,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="708.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TreatmentController">
    <children>
       <Pane layoutX="-2.0" prefHeight="120.0" prefWidth="1281.0" style="-fx-background-color: black;">
@@ -31,20 +30,20 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="198.0" prefWidth="648.0">
                <children>
-                  <Label layoutX="65.0" layoutY="20.0" text="Mã bệnh án" />
-                  <TextField layoutX="139.0" layoutY="16.0" />
-                  <Label layoutX="50.0" layoutY="59.0" text="Mã bệnh nhân" />
-                  <Label layoutX="51.0" layoutY="100.0" text="Phòng điều trị" />
-                  <Label layoutX="97.0" layoutY="141.0" text="Bác sĩ" />
-                  <ChoiceBox layoutX="139.0" layoutY="95.0" prefWidth="150.0" />
-                  <ChoiceBox layoutX="139.0" layoutY="137.0" prefWidth="150.0" />
-                  <ChoiceBox layoutX="138.0" layoutY="55.0" prefWidth="150.0" />
-                  <Label layoutX="339.0" layoutY="19.0" text="Ngày khám" />
-                  <Label layoutX="337.0" layoutY="58.0" text="Chuẩn đoán" />
-                  <TextField layoutX="411.0" layoutY="53.0" />
-                  <Label layoutX="324.0" layoutY="99.0" text="Hướng điều trị" />
-                  <TextField layoutX="411.0" layoutY="94.0" />
-                  <DatePicker layoutX="411.0" layoutY="15.0" prefHeight="26.0" prefWidth="150.0" />
+                  <Label fx:id="treatmentCodeLB" layoutX="65.0" layoutY="20.0" text="Mã bệnh án" />
+                  <TextField fx:id="treatmentCodeTF" disable="true" editable="false" layoutX="139.0" layoutY="16.0" />
+                  <Label fx:id="patientCodeLB" layoutX="50.0" layoutY="59.0" text="Mã bệnh nhân" />
+                  <Label fx:id="treatmentRoomLB" layoutX="51.0" layoutY="100.0" text="Phòng điều trị" />
+                  <Label fx:id="doctorLB" layoutX="97.0" layoutY="141.0" text="Bác sĩ" />
+                  <ChoiceBox fx:id="treatmentRoomChB" layoutX="139.0" layoutY="95.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="doctorChb" layoutX="139.0" layoutY="137.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="patientCodeChB" layoutX="138.0" layoutY="55.0" prefWidth="150.0" />
+                  <Label fx:id="treatmentDateLB" layoutX="339.0" layoutY="19.0" text="Ngày khám" />
+                  <Label fx:id="diagnosticLB" layoutX="337.0" layoutY="58.0" text="Chuẩn đoán" />
+                  <TextField fx:id="diagnosticTF" layoutX="411.0" layoutY="53.0" />
+                  <Label fx:id="treatmentContentLB" layoutX="324.0" layoutY="99.0" text="Hướng điều trị" />
+                  <TextField fx:id="treatmentContentTF" layoutX="411.0" layoutY="94.0" />
+                  <DatePicker fx:id="treatmentDP" layoutX="411.0" layoutY="15.0" prefHeight="26.0" prefWidth="150.0" />
                </children>
             </AnchorPane>
         </content>
@@ -53,79 +52,74 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="368.0" prefWidth="376.0">
                <children>
-                  <Label layoutX="22.0" layoutY="18.0" text="Mã bệnh án" />
-                  <TextField editable="false" layoutX="96.0" layoutY="14.0" />
+                  <Label layoutX="7.0" layoutY="18.0" text="Mã bệnh nhân" />
+                  <TextField fx:id="patientCodeTF" editable="false" layoutX="96.0" layoutY="14.0" />
                   <Label layoutX="32.0" layoutY="55.0" text="Họ và tên" />
-                  <TextField editable="false" layoutX="96.0" layoutY="51.0" />
+                  <TextField fx:id="patientNameTF" editable="false" layoutX="96.0" layoutY="51.0" />
                   <Label layoutX="31.0" layoutY="94.0" text="Ngày sinh" />
-                  <TextField editable="false" layoutX="96.0" layoutY="90.0" />
+                  <TextField fx:id="patientBirthdayTF" editable="false" layoutX="96.0" layoutY="90.0" />
                   <Label layoutX="35.0" layoutY="136.0" text="Giới tính" />
-                  <TextField editable="false" layoutX="96.0" layoutY="132.0" />
+                  <TextField fx:id="patientGenderTF" editable="false" layoutX="96.0" layoutY="132.0" />
                   <Label layoutX="34.0" layoutY="176.0" text="Số CCCD" />
-                  <TextField editable="false" layoutX="96.0" layoutY="172.0" />
+                  <TextField fx:id="identityNumberTF" editable="false" layoutX="96.0" layoutY="172.0" />
                   <Label layoutX="262.0" layoutY="18.0" text="Số điện thoại" />
-                  <TextField editable="false" layoutX="341.0" layoutY="14.0" />
+                  <TextField fx:id="phoneNumberTF" editable="false" layoutX="341.0" layoutY="14.0" />
                   <Label layoutX="297.0" layoutY="55.0" text="Địa chỉ" />
-                  <TextField editable="false" layoutX="341.0" layoutY="51.0" />
+                  <TextField fx:id="addressTF" editable="false" layoutX="341.0" layoutY="51.0" />
                   <Label layoutX="268.0" layoutY="92.0" text="Nghề nghiệp" />
-                  <TextField editable="false" layoutX="341.0" layoutY="88.0" />
+                  <TextField fx:id="jobTF" editable="false" layoutX="341.0" layoutY="88.0" />
                   <Label layoutX="273.0" layoutY="129.0" text="Nhóm máu" />
-                  <TextField editable="false" layoutX="341.0" layoutY="125.0" />
+                  <TextField fx:id="bloodNameTF" editable="false" layoutX="341.0" layoutY="125.0" />
                </children>
             </AnchorPane>
         </content>
       </TitledPane>
-      <TableView layoutX="37.0" layoutY="449.0" prefHeight="242.0" prefWidth="1071.0">
+      <TableView fx:id="treatmentTable" layoutX="37.0" layoutY="449.0" prefHeight="242.0" prefWidth="1201.0">
         <columns>
-          <TableColumn prefWidth="104.0" text="Mã bệnh án" />
-          <TableColumn prefWidth="113.59988403320312" text="Mã bệnh nhân" />
-            <TableColumn prefWidth="108.79998779296875" text="Phòng điều trị" />
-            <TableColumn prefWidth="216.0" text="Bác sĩ" />
-            <TableColumn prefWidth="120.800048828125" text="Ngày khám" />
-            <TableColumn prefWidth="162.39990234375" text="Chuẩn đoán" />
-            <TableColumn prefWidth="244.0" text="Hướng điều trị" />
+          <TableColumn fx:id="treatmentCodeCol" prefWidth="104.0" text="Mã bệnh án" />
+          <TableColumn fx:id="patientCodeCol" prefWidth="113.59988403320312" text="Mã bệnh nhân" />
+            <TableColumn fx:id="treatmentRoomCol" prefWidth="124.80000305175781" text="Phòng điều trị" />
+            <TableColumn fx:id="doctorCol" prefWidth="200.0" text="Bác sĩ" />
+            <TableColumn fx:id="treatmentDateCol" prefWidth="126.39996337890625" text="Ngày khám" />
+            <TableColumn fx:id="diagnosticCol" prefWidth="194.4000244140625" text="Chuẩn đoán" />
+            <TableColumn fx:id="treatmentContentCol" prefWidth="337.5999755859375" text="Hướng điều trị" />
         </columns>
       </TableView>
-      <Button layoutX="41.0" layoutY="395.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Làm mới">
+      <Button fx:id="reloadBtn" layoutX="41.0" layoutY="395.0" mnemonicParsing="false" onAction="#reload" prefHeight="41.0" prefWidth="98.0" text="Làm mới">
          <graphic>
             <FontAwesomeIcon glyphName="REFRESH" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="147.0" layoutY="395.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Thêm">
+      <Button fx:id="addBtn" layoutX="147.0" layoutY="395.0" mnemonicParsing="false" onAction="#add" prefHeight="41.0" prefWidth="98.0" text="Thêm">
          <graphic>
             <FontAwesomeIcon glyphName="PLUS_CIRCLE" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="253.0" layoutY="395.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Sửa">
+      <Button fx:id="ediBtn" layoutX="253.0" layoutY="395.0" mnemonicParsing="false" onAction="#edit" prefHeight="41.0" prefWidth="98.0" text="Sửa">
          <graphic>
             <FontAwesomeIcon glyphName="EDIT" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="358.0" layoutY="395.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Xoá">
+      <Button fx:id="removeBtn" layoutX="358.0" layoutY="395.0" mnemonicParsing="false" onAction="#remove" prefHeight="41.0" prefWidth="98.0" text="Xoá">
          <graphic>
             <FontAwesomeIcon glyphName="TRASH" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="464.0" layoutY="395.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Lưu">
+      <Button fx:id="saveBtn" layoutX="464.0" layoutY="395.0" mnemonicParsing="false" onAction="#save" prefHeight="41.0" prefWidth="98.0" text="Lưu">
          <graphic>
             <FontAwesomeIcon glyphName="SAVE" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="570.0" layoutY="395.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Huỷ">
+      <Button fx:id="cancelBtn" layoutX="570.0" layoutY="395.0" mnemonicParsing="false" onAction="#cancel" prefHeight="41.0" prefWidth="98.0" text="Huỷ">
          <graphic>
             <FontAwesomeIcon glyphName="TIMES" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="678.0" layoutY="395.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Thoát">
+      <Button fx:id="exitBtn" layoutX="678.0" layoutY="395.0" mnemonicParsing="false" onAction="#exit" prefHeight="41.0" prefWidth="98.0" text="Thoát">
          <graphic>
             <FontAwesomeIcon glyphName="SIGN_OUT" size="20" />
          </graphic>
       </Button>
-      <TextField layoutX="836.0" layoutY="403.0" prefWidth="150.0" />
-      <Button layoutX="996.0" layoutY="395.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Tìm kiếm">
-         <graphic>
-            <FontAwesomeIcon glyphName="SEARCH" size="20" />
-         </graphic>
-      </Button>
+      <TextField fx:id="filterTF" layoutX="1060.0" layoutY="403.0" onKeyTyped="#search" prefHeight="26.0" prefWidth="177.0" promptText="Tìm kiếm theo mã bệnh nhân" />
    </children>
 </AnchorPane>

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="278.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Menu">
+<AnchorPane prefHeight="278.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Menu">
    <children>
       <Pane layoutY="-1.0" prefHeight="106.0" prefWidth="600.0" style="-fx-background-color: black;">
          <children>
@@ -19,7 +17,7 @@
             </Text>
          </children>
       </Pane>
-      <Button contentDisplay="TOP" layoutX="80.0" layoutY="139.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="116.0" text="Bệnh Nhân">
+      <Button contentDisplay="TOP" layoutX="80.0" layoutY="139.0" mnemonicParsing="false" onAction="#moveToPatient" prefHeight="98.0" prefWidth="116.0" text="Bệnh Nhân">
          <graphic>
             <FontAwesomeIcon glyphName="USERS" size="40" />
          </graphic>
@@ -27,7 +25,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button contentDisplay="TOP" layoutX="244.0" layoutY="139.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="116.0" text="Phòng điều trị">
+      <Button contentDisplay="TOP" layoutX="244.0" layoutY="139.0" mnemonicParsing="false" onAction="#moveToTreatment" prefHeight="98.0" prefWidth="116.0" text="Phòng điều trị">
          <graphic>
             <FontAwesomeIcon glyphName="MEDKIT" size="40" />
          </graphic>
@@ -35,7 +33,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button contentDisplay="TOP" layoutX="403.0" layoutY="139.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="116.0" text="Đăng xuất">
+      <Button contentDisplay="TOP" layoutX="403.0" layoutY="139.0" mnemonicParsing="false" onAction="#signOut" prefHeight="98.0" prefWidth="116.0" text="Đăng xuất">
          <graphic>
             <FontAwesomeIcon glyphName="SIGN_OUT" size="40" />
          </graphic>

@@ -1,0 +1,2 @@
+BA0001|BN0001|PDT01|Trần Thị Xuân|01-03-2022|Đau dạ dày|Uống thuốc
+BA0002|BN0002|PDT02|Nguyễn Đức Nam|03-03-2022|Đau bụng|Uống thuốc đau dạ dày

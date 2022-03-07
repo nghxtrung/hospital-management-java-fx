@@ -15,6 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import java.lang.String?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ToggleGroup?>
 <AnchorPane prefHeight="659.0" prefWidth="1356.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PatientController">
    <children>
       <Pane prefHeight="106.0" prefWidth="1356.0" style="-fx-background-color: black;">
@@ -27,86 +30,127 @@
             </Text>
          </children>
       </Pane>
-      <Button layoutX="35.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Làm mới">
+      <Button layoutX="35.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Làm mới" fx:id="refresh" onAction="#refreshTable">
          <graphic>
             <FontAwesomeIcon glyphName="REFRESH" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="141.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Thêm">
+      <Button layoutX="141.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Thêm" fx:id="add" onAction="#addPatient">
          <graphic>
             <FontAwesomeIcon glyphName="PLUS_CIRCLE" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="247.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Sửa">
+      <Button layoutX="247.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Sửa" fx:id="edit" onAction="#editPatient">
          <graphic>
             <FontAwesomeIcon glyphName="EDIT" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="352.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Xoá">
+      <Button layoutX="352.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Xoá" fx:id="delete" onAction="#deletePatient">
          <graphic>
             <FontAwesomeIcon glyphName="TRASH" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="458.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Lưu">
+      <Button layoutX="458.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Lưu" fx:id="save" onAction="#savePatient">
          <graphic>
             <FontAwesomeIcon glyphName="SAVE" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="564.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Huỷ">
+      <Button layoutX="564.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Huỷ" fx:id="cancel" onAction="#cancelPatient">
          <graphic>
             <FontAwesomeIcon glyphName="TIMES" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="672.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Thoát">
+      <Button layoutX="672.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Thoát" fx:id="logout" onAction="#logout">
          <graphic>
             <FontAwesomeIcon glyphName="SIGN_OUT" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="1226.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Tìm kiếm">
+      <Button layoutX="1226.0" layoutY="365.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Tìm kiếm" fx:id="search" onAction="#searchPatientByAge">
          <graphic>
             <FontAwesomeIcon glyphName="SEARCH" size="20" />
          </graphic>
       </Button>
-      <TableView layoutX="35.0" layoutY="421.0" prefHeight="216.0" prefWidth="1290.0">
+
+      <TableView layoutX="35.0" layoutY="421.0" prefHeight="216.0" prefWidth="1290.0" fx:id="table" onMouseClicked="#handleClickTableView">
         <columns>
-          <TableColumn prefWidth="108.79995423555374" text="Mã bệnh nhân" />
-          <TableColumn prefWidth="239.20005798339844" text="Họ và tên" />
-            <TableColumn prefWidth="119.20001220703125" text="Ngày sinh" />
-            <TableColumn prefWidth="89.5999755859375" text="Giới tính" />
-            <TableColumn prefWidth="173.5999755859375" text="Số CCCD" />
-            <TableColumn prefWidth="172.0" text="Số điện thoại" />
-            <TableColumn prefWidth="183.2000732421875" text="Địa chỉ" />
-            <TableColumn prefWidth="108.7999267578125" text="Nghề nghiệp" />
-            <TableColumn prefWidth="92.0" text="Nhóm máu" />
+          <TableColumn fx:id="idCol" prefWidth="108.79995423555374" text="Mã bệnh nhân" />
+          <TableColumn fx:id="nameCol" prefWidth="239.20005798339844" text="Họ và tên" />
+            <TableColumn fx:id="DateCol" prefWidth="119.20001220703125" text="Ngày sinh" />
+            <TableColumn fx:id="genderCol" prefWidth="89.5999755859375" text="Giới tính" />
+            <TableColumn fx:id="cmndCol" prefWidth="173.5999755859375" text="Số CCCD" />
+            <TableColumn fx:id="phoneCol" prefWidth="172.0" text="Số điện thoại" />
+            <TableColumn fx:id="addressCol" prefWidth="183.2000732421875" text="Địa chỉ" />
+            <TableColumn fx:id="jobCol" prefWidth="108.7999267578125" text="Nghề nghiệp" />
+            <TableColumn fx:id="bloodCol" prefWidth="92.0" text="Nhóm máu" />
         </columns>
       </TableView>
-      <TitledPane animated="false" collapsible="false" layoutX="35.0" layoutY="116.0" prefHeight="234.0" prefWidth="590.0" text="Thông tin bệnh nhân">
+
+      <TitledPane animated="false" collapsible="false" layoutX="35.0" layoutY="116.0" prefHeight="234.0" prefWidth="1010.0" text="Thông tin bệnh nhân">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
                   <Label layoutX="56.0" layoutY="18.0" text="Mã bệnh nhân" />
-                  <TextField layoutX="143.0" layoutY="14.0" />
+                  <TextField layoutX="143.0" layoutY="14.0" fx:id="MaBN" disable="true"/>
+
                   <Label layoutX="84.0" layoutY="54.0" text="Họ và tên" />
-                  <TextField layoutX="143.0" layoutY="50.0" />
-                  <Label layoutX="79.0" layoutY="90.0" text="Ngày sinh" />
-                  <Label layoutX="87.0" layoutY="125.0" text="Giới tính" />
+                  <TextField layoutX="143.0" layoutY="50.0" fx:id="HoTen" />
+                  <Label layoutX="313.0" layoutY="50.0" fx:id="errorFullName" />
+
+                  <Label layoutX="79.0" layoutY="90.0" text="Ngày sinh"  />
+                  <DatePicker layoutX="143.0" layoutY="86.0" prefHeight="26.0" prefWidth="150.0" fx:id="NgaySinh" />
+                  <Label layoutX="313.0" layoutY="86.0" fx:id="errorNgaySinh" />
+
                   <Label layoutX="86.0" layoutY="161.0" text="Số CCCD" />
-                  <TextField layoutX="143.0" layoutY="157.0" />
-                  <Label layoutX="326.0" layoutY="18.0" text="Số điện thoại" />
-                  <TextField layoutX="409.0" layoutY="14.0" />
-                  <Label layoutX="361.0" layoutY="54.0" text="Địa chỉ" />
-                  <TextField layoutX="409.0" layoutY="50.0" />
-                  <Label layoutX="334.0" layoutY="90.0" text="Nghề nghiệp" />
-                  <TextField layoutX="408.0" layoutY="86.0" />
-                  <Label layoutX="339.0" layoutY="125.0" text="Nhóm máu" />
-                  <DatePicker layoutX="143.0" layoutY="86.0" prefHeight="26.0" prefWidth="150.0" />
-                  <RadioButton layoutX="161.0" layoutY="125.0" mnemonicParsing="false" text="Nam" />
-                  <RadioButton layoutX="228.0" layoutY="125.0" mnemonicParsing="false" text="Nữ" />
-                  <ChoiceBox layoutX="408.0" layoutY="121.0" prefWidth="150.0" />
+                  <TextField layoutX="143.0" layoutY="157.0" fx:id="SoCMND" />
+                  <Label layoutX="313.0" layoutY="157.0"  fx:id="errorCMND"  />
+
+                  <Label layoutX="526.0" layoutY="18.0" text="Số điện thoại" />
+                  <TextField layoutX="609.0" layoutY="14.0" fx:id="SDT" />
+                  <Label layoutX="779.0" layoutY="14.0" fx:id="errorSDT" />
+
+                  <Label layoutX="561.0" layoutY="54.0" text="Địa chỉ" />
+                  <TextField layoutX="609.0" layoutY="50.0" fx:id="DiaChi" />
+                  <Label layoutX="779.0" layoutY="54.0" fx:id="errorDC"/>
+
+                  <Label layoutX="534.0" layoutY="90.0" text="Nghề nghiệp" />
+                  <TextField layoutX="608.0" layoutY="86.0" fx:id="NgheNghiep" />
+                  <Label layoutX="779.0" layoutY="90.0" fx:id="errorJob" />
+
+
+                  <Label layoutX="87.0" layoutY="125.0" text="Giới tính" />
+                  <HBox layoutX="145.0" layoutY="125.0" prefHeight="46.0" prefWidth="312.0" spacing="20">
+                        <children>
+                           <RadioButton mnemonicParsing="false" text="Nam" fx:id="male" >
+                              <toggleGroup>
+                                 <ToggleGroup fx:id="Gender" />
+                              </toggleGroup>
+                           </RadioButton>
+                           <RadioButton  mnemonicParsing="false" text="Nữ" toggleGroup="$Gender" fx:id="female" />
+                        </children>
+                  </HBox>
+                  <Label layoutX="313.0" layoutY="125.0" fx:id="errorGender" />
+
+                  <Label layoutX="539.0" layoutY="125.0" text="Nhóm máu" />
+                  <ChoiceBox layoutX="608.0" layoutY="121.0" prefWidth="150.0"  fx:id="NhomMau" value="- Chọn nhóm máu -">
+                     <String   fx:value="A"/>
+                     <String   fx:value="B"/>
+                     <String   fx:value="0"/>
+                     <String   fx:value="AB"/>
+                     <String   fx:value="A-"/>
+                     <String   fx:value="B-"/>
+                     <String   fx:value="0-"/>
+                     <String   fx:value="AB-"/>
+                  </ChoiceBox>
+                  <Label layoutX="779.0" layoutY="125.0" fx:id="errorBlood"/>
+
                </children>
             </AnchorPane>
         </content>
       </TitledPane>
-      <ChoiceBox layoutX="1061.0" layoutY="373.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="1061.0" layoutY="373.0" prefWidth="150.0" value="- Chọn nhóm độ tuổi -" fx:id="timkiem">
+         <String   fx:value="0 - 14 tuổi"/>
+         <String   fx:value="15 - 59 tuổi"/>
+         <String   fx:value="Trên 60 tuổi"/>
+      </ChoiceBox>
    </children>
 </AnchorPane>
